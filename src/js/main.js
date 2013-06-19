@@ -11,5 +11,7 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery', 'backbone', 'underscore'], function($, _, Backbone){});
+requirejs('main', ['jquery', 'backbone', 'underscore'], function($, _, Backbone){
+    alert('main module loaded');
+});
 
