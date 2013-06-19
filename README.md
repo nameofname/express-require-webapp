@@ -5,9 +5,9 @@ My goal is to set up a simple SPA webapp that serves pages using require.js. Not
 
 
 ###Dependencies
-Node.js
-Express
-* Prefer to use Supervisor to watch the node server.
+* Node.js
+* Express
+* *Prefer to use Supervisor to watch the node server*
 
 
 ```javascript
