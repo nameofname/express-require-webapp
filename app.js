@@ -31,5 +31,11 @@ app.get('/socket-test', function(req, res){
 server.listen(3000);
 
 io.on('connection', function(socket){
+
     socket.emit('news', { hello: 'world' });
+
+    socket.on('nerp', function(data){
+        console.log(data);
+    });
 });
+

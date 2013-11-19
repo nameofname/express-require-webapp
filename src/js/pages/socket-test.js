@@ -4,8 +4,8 @@
  * Time: 1:11 PM
  */
 
-(function(){
-    "use strict";
+//(function(){
+//    "use strict";
 
     var socket = io.connect('http://localhost');
     socket.on('news', function (data) {
@@ -13,4 +13,4 @@
         socket.emit('my other event', { my: 'data' });
     });
 
-})();
+//})();
