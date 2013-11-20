@@ -24,15 +24,10 @@ app.get('/socket-test', function(req, res){
     res.sendfile(__dirname + '/src/html/socket-test.html');
 });
 
-// Listening on port 3K for the web app.
-//app.listen(3000);
-
-//Listening on port 80 for the socket:
+//Listening on port 3000 for the socket:
 server.listen(3000);
 
 io.on('connection', function(socket){
-
-//    socket.emit('news', { hello: 'world' });
 
     socket.on('messageServer', function(data){
         socket.broadcast.emit("messageClient", {message: data});
