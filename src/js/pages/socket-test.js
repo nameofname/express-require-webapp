@@ -9,7 +9,7 @@
 
     var socket = io.connect('http://localhost');
 
-    $('input').on('change', function(e){
+    $('textarea').on('change', function(e){
         var val = $(this).val();
         console.log('changing', val);
         socket.emit('messageServer', { message: val });

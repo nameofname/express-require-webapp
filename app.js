@@ -35,7 +35,7 @@ io.on('connection', function(socket){
 //    socket.emit('news', { hello: 'world' });
 
     socket.on('messageServer', function(data){
-        socket.emit("messageClient", {message: data});
+        socket.broadcast.emit("messageClient", {message: data});
     });
 });
 
