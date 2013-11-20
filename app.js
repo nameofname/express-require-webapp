@@ -12,7 +12,7 @@ app.engine('html', require('ejs').renderFile);
 app.use('/js', express.static(__dirname + '/src/js'));
 
 // CSS:
-app.use('/css', express.static(__dirname + '/src/styles'));
+app.use('/css', express.static(__dirname + '/src/css'));
 
 // Reference to socket.io library -- didn't want to move it into the src directory...
 app.use('/socket_js', express.static(__dirname + '/node_modules/socket.io/node_modules/socket.io-client/dist'));
@@ -32,10 +32,10 @@ server.listen(3000);
 
 io.on('connection', function(socket){
 
-    socket.emit('news', { hello: 'world' });
+//    socket.emit('news', { hello: 'world' });
 
-    socket.on('nerp', function(data){
-        console.log(data);
+    socket.on('messageServer', function(data){
+        socket.emit("messageClient", {message: data});
     });
 });
 

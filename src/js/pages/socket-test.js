@@ -4,13 +4,24 @@
  * Time: 1:11 PM
  */
 
-//(function(){
-//    "use strict";
+(function(){
+    "use strict";
 
     var socket = io.connect('http://localhost');
-    socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('my other event', { my: 'data' });
+
+    $('input').on('change', function(e){
+        var val = $(this).val();
+        console.log('changing', val);
+        socket.emit('messageServer', { message: val });
     });
 
-//})();
+    socket.on('messageClient', function (data) {
+        var templateData = {
+            message : data.message.message
+        };
+        var row = _.template($('#template-message').html(), templateData, {variable: 'obj'});
+        console.log(row);
+        $('#messageArea tbody').append(row);
+    });
+
+})();
