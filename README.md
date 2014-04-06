@@ -1,7 +1,8 @@
 #Test Node App
 
 Playing around with new and different web technologies. 
-My goal is to set up a simple SPA webapp that serves pages using require.js. Nothing fancy. 
+Doing some tests with require.js, web sockets. My final answer? Web sockets are awesome, require.js is not for me.
+Future Ronald : Feel free to put anything in here you want to test with. No worries.
 
 
 ###Dependencies
@@ -13,6 +14,6 @@ My goal is to set up a simple SPA webapp that serves pages using require.js. Not
 ```javascript
 function ronald()
 {
-    console.log('derf');
+    console.log('derp');
 }
 ```
